@@ -7,7 +7,7 @@ Made with NodeJS
 - Install Node (prefer using [nvm](https://github.com/creationix/nvm))
 - Install MongoDB(https://www.mongodb.com/try/download/community)
 
-#Others
+# Others
 
 99% Done for the Simple Shortener Url Application 
 1% issues:
