@@ -9,8 +9,7 @@ Made with NodeJS
 
 # Others
 
-99% Done for the Simple Shortener Url Application 
-1% issues:
-
-- Can not deploy to online Heroku free server due to not having Credit Card
-- Getting one bug with create the same existed short-url
+- 99% Done for the Simple Shortener Url Application 
+- 1% issues:
+  - Can not deploy to online Heroku free server due to not having Credit Card
+  - Getting one bug with create the same existed short-url
