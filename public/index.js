@@ -2,6 +2,7 @@ const btnRemove = document.getElementsByClassName('btn-danger');
 for(let i = 0; i < btnRemove.length ; i++){
     btnRemove[i].addEventListener('click',()=>{
         let urlId = btnRemove[i].getAttribute('data-id');
+        //Call Ajax to get update when delete Url
         $.ajax({
             method: "POST",
             url: "/delete",
@@ -9,6 +10,7 @@ for(let i = 0; i < btnRemove.length ; i++){
             success: (result) =>{
                 $('tbody').empty();
                 for(let url of result.allUrlsLeft){
+                    //Reset data on board
                     $('tbody').append(`
                     <tr>
                     <td>

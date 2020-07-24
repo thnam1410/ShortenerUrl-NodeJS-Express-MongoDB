@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const port = process.env.PORT || 3000;
 const app = express();
 const shortUrl = require('./models/shortUrl');
+
 //Setup DB
 mongoose.connect(process.env.DATABASE_URL,{ 
     useNewUrlParser: true , 
@@ -22,6 +23,7 @@ app.use(express.static('public'));
 app.use(express.urlencoded({extended:false}));
 
 app.get('/', async (req, res) => {
+    //Index show all short urls
     const shortUrls = await shortUrl.find();
     res.render('index',{
         shortUrls: shortUrls
@@ -29,6 +31,7 @@ app.get('/', async (req, res) => {
 })
 
 app.post('/shortUrls', checkExisted, async (req, res) => {
+    //Create short Url
     await shortUrl.create({
         fullUrl:req.body.fullUrl,
         shortUrl:req.body.shortUrl
@@ -37,6 +40,8 @@ app.post('/shortUrls', checkExisted, async (req, res) => {
 })
 
 app.get('/:shortUrl', async (req, res) =>{
+    //Access to shortUrl
+    //Ex: localhost:3000/ytb => redirect to youtube.com or something else of it's own full Url
     const url = await shortUrl.findOne({
         shortUrl:req.params.shortUrl
     });
@@ -48,6 +53,7 @@ app.get('/:shortUrl', async (req, res) =>{
     
 })
 app.post('/delete', async (req, res) =>{
+    //Delete short Url on Board
     let shortUrlFromClient = req.body.url;
     let url = await shortUrl.findOne({
         shortUrl:shortUrlFromClient
