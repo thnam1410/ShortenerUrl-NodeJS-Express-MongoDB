@@ -4,8 +4,8 @@ Made with NodeJS
 
 # Requirements
 
-- Install Node (prefer using [nvm](https://github.com/creationix/nvm))
-- Install MongoDB(https://www.mongodb.com/try/download/community)
+- Install [NodeJS](https://nodejs.org/en/download/)
+- Install [MongoDB](https://www.mongodb.com/try/download/community)
 
 # Others
 
